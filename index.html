@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Ticketing</title>
+    <!-- font awesome cdn  -->
+    <script src="https://kit.fontawesome.com/6ac8fc23da.js" crossorigin="anonymous"></script>
+    <!-- google font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- tailwind + daisy ui  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                primary : '#1dd100',
+                secondary : '#030712',
+                cuponOne : '#ffbf0f',
+                cuponTwo : '#f78c9c',
+                mobileMenu : '#f7f8f8',
+                body : '#03071299',
+                buttonColor : 'rgba(29, 209, 0, 0.15)',
+              },
+              fontFamily: {
+                Raleway : 'Raleway',
+                Inter : 'Inter',
+              }
+            }
+          }
+        }
+      </script>
+</head>
+<body class="Raleway mt-2 body">
+    <header>
+        <!-- navbar starts here  -->
+        <nav>
+            <div class="navbar bg-base-100  w-10/12 mx-auto">
+                <div class="navbar-start">
+
+                  <a class="btn btn-ghost  Raleway font-extrabold text-3xl">Dublin-Ticket</a>
+                </div>
+                <div class="navbar-center  hidden lg:flex ">
+                  <ul class="menu menu-horizontal px-1 space-x-8 font-semibold grid grid-cols-5">
+                    <li class="hover:bg-primary py-2 rounded text-black hover:text-secondary w-full"><a href="#" class="font-semibold text-lg transition-colors duration-200 ease-in-out">Home</a></li>
+                    <li class="hover:bg-primary py-2 rounded text-black hover:text-secondary w-full"><a href="#" class="font-semibold text-lg transition-colors duration-200 ease-in-out">About</a></li>
+                    <li class="hover:bg-primary py-2 rounded text-black hover:text-secondary w-full"><a href="#" class="font-semibold text-lg transition-colors duration-200 ease-in-out">Destination</a></li>
+                    <li class="hover:bg-primary py-2 rounded text-black hover:text-secondary w-full"><a href="#" class="font-semibold text-lg transition-colors duration-200 ease-in-out">Search</a></li>
+                    <li class="hover:bg-primary py-2 rounded text-black hover:text-secondary w-full"><a href="#" class="font-semibold text-lg transition-colors duration-200 ease-in-out">Contact Us</a></li>
+
+                  </ul>
+                </div>
+               <div class="flex items-end gap-5 navbar-end">
+                <button class="btn btn-primary bg-primary text-secondary border-primary hover:border-primary hover:bg-transparent hover:text-primary">
+                    <span>Bus</span>
+                    <i class="fa-solid fa-van-shuttle"></i>
+                </button>
+                <button id="menu-btn" class="sm:hidden block">
+                    <i class="fa-solid fa-bars sm:hidden block text-2xl bg-primary px-3 py-2 rounded"></i>
+                    <i id="close-icon" class="fa-solid fa-xmark sm:block hidden text-2xl bg-primary px-3 py-2 rounded"></i>
+                </button>
+               </div>
+               <ul id="mobileMenu" class="hidden flex-col absolute top-16 p-5 shadow-lg rounded-2xl bg-slate-200 text-center w-full mx-auto z-50">
+                    <li class="hover:bg-primary py-2 rounded text-primary hover:text-secondary w-full">
+                        <a href="#" class="font-semibold text-lg transition-colors duration-200 ease-in-out">Home</a>
+                    </li>
+                    <li class="hover:bg-primary py-2 rounded text-primary hover:text-secondary w-full">
+                        <a href="#" class="font-semibold text-lg transition-colors duration-200 ease-in-out">About Us</a>
+                    </li>
+                    <li class="hover:bg-primary py-2 rounded text-primary hover:text-secondary w-full">
+                        <a href="#" class="font-semibold text-lg transition-colors duration-200 ease-in-out">Destination</a>
+                    </li>
+                    <li class="hover:bg-primary py-2 rounded text-primary hover:text-secondary w-full">
+                        <a href="#" class="font-semibold text-lg transition-colors duration-200 ease-in-out">Search</a>
+                    </li>
+                    <li class="hover:bg-primary py-2 rounded text-primary hover:text-secondary w-full">
+                        <a href="#" class="font-semibold text-lg transition-colors duration-200 ease-in-out">Contact Us</a>
+                    </li>
+               </ul>
+              </div>
+        </nav>
+        <!-- navbar ends here  -->
+        <!-- hero section starts here   -->
+        <section class="relative w-10/12 mx-auto h-[80vh]">
+            <div class="absolute inset-0 bg-cover bg-center rounded-xl" style="background-image: url('./images/banner.png');"></div>
+            <div class="relative z-10 flex flex-col items-center justify-center text-center h-full">
+              <h1 class="text-4xl md:text-6xl font-bold text-white">End-to-End Travel with</h1>
+              <h2 class="text-5xl md:text-7xl font-bold text-green-400 mt-2">P Paribahan</h2>
+              <p class="text-white mt-4 max-w-2xl">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined experience.</p>
+              <a href="#" class="btn btn-success mt-6 px-6 py-3">Buy Tickets</a>
+            </div>
+          </section>
+          <section class="relative py-12 -mt-20 hidden md:inline">
+            <div class="w-9/12 mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center relative z-10 -mt-24">
+              <!-- Registered Users -->
+              <div class="relative p-8 rounded-2xl shadow-md bg-white grid grid-cols-2">
+                <div class="text-center pt-6">
+                    <i class="fa-solid fa-people-group w-[64px] h-[64px] text-5xl text-green-500"></i>
+                </div>
+                <div>
+                    <div class="text-green-500 text-5xl font-bold">500K+</div>
+                    <p class="text-xl mt-2">Registered users</p>
+                </div>
+              </div>
+              
+              <!-- Tickets Sold -->
+            
+                <div class="relative p-8 rounded-2xl shadow-md bg-white grid grid-cols-2">
+                    <div class="text-center pt-6">
+                        <i class="fa-solid fa-ticket w-[64px] h-[64px] text-5xl text-green-500"></i>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-green-500 text-5xl font-bold">1.7 lacks</div>
+                        <p class="text-xl mt-2">Tickets sold</p>
+                    </div>
+                  </div>
+              
+              
+              <!-- Rental Partners -->
+                <div class="relative p-8 rounded-2xl shadow-md bg-white grid grid-cols-2">
+                    <div class="text-center pt-6">
+                        <i class="fa-solid fa-truck-moving w-[64px] h-[64px] text-5xl text-green-500"></i>
+                    </div>
+                    <div>
+                        <div class="text-green-500 text-5xl font-bold">80K+</div>
+                        <p class="text-xl mt-2">Rental partners</p>
+                    </div>
+                  </div>
+              
+            </div>
+          </section>
+    </header>
+    <main>
+        <!-- offer section  -->
+        <section class="mt-5 md:mt-20 w-10/12 mx-auto">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold font-Inter">Best offers for you</h1>
+            </div>
+            <!-- cupon cards  -->
+            <div class="grid lg:grid-cols-2 gap-10 my-10">
+                <div class="bg-cuponOne px-14 py-10 rounded-2xl shadow-xl flex sm:flex-row flex-col justify-between items-center font-Inter relative overflow-hidden">
+                    <div class="z-10">
+                        <h1 class="text-2xl font-extrabold">15% OFF</h1>
+                        <h3 class="font-bold">on your next purchase</h3>
+                        <p>use by January 2024</p>
+                    </div>
+                    <div class="flex flex-col items-center justify-between h-full overflow-hidden">
+                        <span class="bg-white inline-block w-10 h-10 rounded-full absolute -top-5 sm:right-auto right-16"></span>
+                        <span class="inline-block border-2 border-dashed border-white h-full rounded-full absolute top-0 sm:right-auto right-20"></span>
+                        <span class="bg-white inline-block w-10 h-10 rounded-full absolute -bottom-5 sm:right-auto right-16"></span>
+                    </div>
+                    <div class="text-center z-10">
+                        <h1 class="text-2xl font-extrabold">NEW50</h1>
+                        <p>Coupon Code</p>
+                    </div>
+                </div>
+                <div class="bg-cuponTwo px-14 py-10 rounded-2xl shadow-xl flex sm:flex-row flex-col justify-between items-center font-Inter relative overflow-hidden">
+                    <div class="z-10">
+                        <h1 class="text-2xl font-extrabold">15% OFF</h1>
+                        <h3 class="font-bold">on your next purchase</h3>
+                        <p>use by January 2024</p>
+                    </div>
+                    <div class="flex flex-col items-center justify-between h-full overflow-hidden">
+                        <span class="bg-white inline-block w-10 h-10 rounded-full absolute -top-5 sm:right-auto right-16"></span>
+                        <span class="inline-block border-2 border-dashed border-white h-full rounded-full absolute top-0 sm:right-auto right-20"></span>
+                        <span class="bg-white inline-block w-10 h-10 rounded-full absolute -bottom-5 sm:right-auto right-16"></span>
+                    </div>
+                    <div class="text-center z-10">
+                        <h1 class="text-2xl font-extrabold">NEW50</h1>
+                        <p>Coupon Code</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="#" class="btn btn-success mt-6 px-6 py-3 bg-transparent text-[#1DD100]">Buy Tickets</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="./js/app.js"></script>
+</body>
+</html>
